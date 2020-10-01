@@ -15,10 +15,10 @@
 # use the find command to generate the list of files with their sizes, with an error redirect to /dev/null
 # use cut or awk to display only the output desired
 
-#echo "Setuid files:"
-#echo "============="
-#find / -type f -executable -perm -4000 -ls 2>/dev/null | sort -k 5
-#echo ""
+echo "Setuid files:"
+echo "============="
+find / -type f -executable -perm -4000 -ls 2>/dev/null | sort -k 5
+echo ""
 
 # for the task, add
 # commands to display a title
