@@ -18,12 +18,22 @@
 # Variables   #
 ###############
 title="Overlord"
-host1="echo `hostname`"
+user="Hiral"
+hostname=$HOSTNAME
+time=$(date +'%H:%M')
+dayName=`date +%a`
 ###############
 # Main        #
 ###############
+test $dayName = Mon && title="Optimist"
+test $dayName = Tue && title="Realist"
+test $dayName = Wed && title="Pessimist"
+test $dayName = Thu && title="amazing"
+test $dayName = Fri && title="clever"
+test $dayName = Sat && title="Busy"
+test $dayName = Sun && title="my"
 cat <<EOF
 
-Welcome to planet $hostname, "$title $host1!"
+echo Welcome to planet $hostname, "$title $user! $time $dayName"
 
 EOF
