@@ -1,5 +1,4 @@
 #!/bin/bash
-#
 # This script produces a dynamic welcome message
 # it should look like
 #   Welcome to planet hostname, title name!
@@ -13,10 +12,6 @@
 #   e.g. On Monday it might be Optimist, Tuesday might be Realist, Wednesday might be Pessimist, etc.
 #   You will need multiple tests to set a title
 #   Invent your own titles, do not use the ones from this example
-
-###############
-# Variables   #
-###############
 title="Overlord"
 user="Hiral"
 hostname=$HOSTNAME
@@ -33,7 +28,5 @@ test $dayName = Fri && title="clever"
 test $dayName = Sat && title="Busy"
 test $dayName = Sun && title="my"
 cat <<EOF
-
-echo Welcome to planet $hostname, "$title $user! $time $dayName"
-
+echo "Welcome to planet $hostname, $title $user! $time $dayName"
 EOF
