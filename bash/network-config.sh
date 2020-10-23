@@ -84,7 +84,7 @@ Lan_Address=$(ip a s $(ip a |awk '/: e/{gsub(/:/,"");print $2}')|awk '/inet /{gs
 #   External Name   : $myExternalName
 cat <<EOF
 Hostname        : $(hostname)
-LAN Address     : $(Lan_Address)
+LAN Address     : $Lan_Address
 LAN Hostname    : $(getent hosts $Lan_Address| awk '{print $2}')
 External IP     : $myExternalIP
 External Name   : $myExternalName
