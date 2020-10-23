@@ -23,20 +23,32 @@ echo $secretnumber
 # TASK 3: Tell the user if their guess is too low, or too high after each incorrect guess
 
 read -p "Give me a number from 1 to 10: " userguess # ask for a guess
-while [ $userguess -gt $secretnumber ]; do
-  echo "too high "
-  break
-
+while [ -z "$userguess" ]; do
+  read -p "Give me a number from 1 to 10: " userguess
+  echo "your number is empty"
+  continue
 done
-while [ $userguess -lt $secretnumber ]; do
-  echo "too low"
-  break
-done
+[ "$userguess" -lt "$secretnumber" ] && echo " too low"
+[ "$userguess" -gt "$secretnumber" ] && echo " too high"
 while [ $userguess != $secretnumber ]; do # ask repeatedly until they get it right
   read -p "Give me a number from 1 to 10: " userguess
-
-  [ "$userguess" -gt "$secretnumber" ] && echo "too high."
-  [ "$userguess" -lt "$secretnumber" ] && echo " too low"
+  if [ -z "$userguess" ]; then
+    echo "your number is emty"
+    continue
+  fi
+  if [ $userguess -lt 1 ]||[ $userguess -gt 10 ]; then
+    echo "out of range"
+    continue
+  elif [ $userguess -lt $secretnumber ]; then
+    echo "number is too low "
+    continue
+  elif [ $userguess -gt $secretnumber ]; then
+    echo "number is too high"
+    continue
+  else
+    exit
+  fi
+#  [ "$userguess" -lt "$secretnumber" ] && echo " too low"
 
 done
 echo "You got it! Have a milkdud."
