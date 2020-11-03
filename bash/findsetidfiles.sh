@@ -22,7 +22,7 @@ echo ""
 
 # for the task, add
 # commands to display a title
-echo "Task 1:"
+echo "Task 1"
 echo "========"
 find / -type  f -printf "%k KB  %u %p \n " 2>/dev/null | sort -hr | head -12
 
