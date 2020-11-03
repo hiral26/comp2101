@@ -15,18 +15,18 @@
 title="Overlord"
 user="Hiral"
 hostname=$HOSTNAME
-time=$(date +'%H:%M')
+time=$(date '+%H:%M')
 dayName=`date +%a`
 ###############
 # Main        #
 ###############
-test $dayName = Mon && title="Optimist"
-test $dayName = Tue && title="Realist"
-test $dayName = Wed && title="Pessimist"
-test $dayName = Thu && title="amazing"
-test $dayName = Fri && title="clever"
-test $dayName = Sat && title="Busy"
-test $dayName = Sun && title="my"
+test $dayName=Mon && title="Optimist"
+test $dayName=Tue && title="Realist"
+test $dayName=Wed && title="Pessimist"
+test $dayName=Thu && title="amazing"
+test $dayName=Fri && title="clever"
+test $dayName=Sat && title="Busy"
+test $dayName=Sun && title="my"
 export loginmessage="Welcome to planet $hostname, $title $user! ${time?} ${dayName?}"
 cowsay $loginmessage
 cat <<EOF
