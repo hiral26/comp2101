@@ -24,7 +24,7 @@ echo ""
 # commands to display a title
 echo "Task 1:"
 echo "========"
-find / -type  f -printf "%k KB  %u %p \n " 2>/dev/null|sort -hr|head -12
+find / -type  f -printf "%k KB  %u %p \n " 2>/dev/null | sort -hr | head -12
 
 # commands to make a list of the 12 biggest files
 # sort/format whatever to display the list properly
