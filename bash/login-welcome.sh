@@ -12,7 +12,7 @@
 #   e.g. On Monday it might be Optimist, Tuesday might be Realist, Wednesday might be Pessimist, etc.
 #   You will need multiple tests to set a title
 #   Invent your own titles, do not use the ones from this example
-title="Overlord"
+title="Overlord "
 user="Hiral"
 hostname=$HOSTNAME
 time=$(date '+%H:%M')
